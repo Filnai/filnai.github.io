@@ -2,7 +2,7 @@
 
 ## Mjukvara
 
-### Visual Studio Code
+### Visual Studio Code   
 
 - Installerad sen tidigare.
 
