@@ -1,18 +1,33 @@
 ---
-title: Tester
-date: "2022-11-30"
+title: Onsdag
+date: "2023-01-25"
 ---
 
-<h1>Tjenareee</h1>
+Med hjälp av svelte examples så har jag lagt in musik i hemsidans start, så medans man spelar kan man lyssna på musik.
 
-# you
+````ts
+import AudioPlayer, { stopAll } from './AudioPlayer.svelte'
 
----
+let audioTracks = [
+  'https://sveltejs.github.io/assets/music/satie.mp3'
+]
+````
+````ts
+{#each audioTracks as src}
+  <AudioPlayer {src} />
+{/each}
+````
+Detta var koden jag använde för att kunna få in musiken. Med hjälp av den andra delen av koden,
+så får personen starta musiken själv när de kommer till startsidan. 
 
-## Whatup
+Just nu har jag det nedladdade ljudet som kom med, men kan välja ett nytt genom att söka på mp3 musik.
+Detta gjordes med hjälp av svelte.
 
-**sick** dude
 
----
-
-## My guy!
+````ts
+ <span>Workers: {workers.length}</span>
+ ````
+ För att kunna veta hur många workers man har köpt under spelets gång så la jag till denna kod,
+ som då la till bredvid variabeln worker efter så många som finns.
+ Dessutom var det enjelt att lägga till, bredvid workers så lades det till ett kolon och sedan måsvingar, 
+ som man få tillsatte workers.length i och så räknades workers från det.

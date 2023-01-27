@@ -1,19 +1,15 @@
 ---
-title: Post One
-date: "2021-12-14"
+title: Tisdag
+date: "2023-01-17"
 ---
 
 <script>
  let a = 0;
 </script>
 
-Hello, I am _Post One._
+Laddat ner koden från git
 
-**Nice to meet you!**
-
-**sick**
-
-😀 😃 😄 😁 😆 😅 😂
+Ändrat färgen på border för class "upgrade"
 
 <h1>{a}</h1>
 

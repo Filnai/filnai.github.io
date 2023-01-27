@@ -1,17 +1,17 @@
 ---
-title: Post four
-date: "2021-12-14"
+title: Fredag
+date: "2023-01-20"
 ---
 
 <script>
  let a = 0;
 </script>
 
-Hello, I am _Post One._
+Idag gjorde jag skjusteringar på spelets gång. 
+Genom att höja priserna för att inte ha det lika enkelt, samt när workers ska arbeta och lägga till clicks.
 
-**Nice to meet tjena!**
-
-**sick**
+Framöver vill jag fixa lite med doubler och få den att funka bättre än vad det gör nu, det händer oftast att man kan dubbla ändå om man inte har tillräckligt många clicks.
+Samt att priset höjs efter man tryckt på att dubbla en gång istället för att det bara höjs när man köper workers.
     
 <h1>{a}</h1>
 
