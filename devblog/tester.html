@@ -7,16 +7,16 @@
 		<meta http-equiv="content-security-policy" content="">
 		<link href="../_app/immutable/assets/_layout-8003c18b.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/2-c12348e4.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/start-f839ee08.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-efcbbb00.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-08392291.js">
+		<link rel="modulepreload" href="../_app/immutable/start-fd207905.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-1a61c524.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-339cea0c.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-f6925622.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-11e44e3b.js">
 		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-8546fc33.js">
-		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-53688c44.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/_page-2e95bc42.js"><!-- HEAD_svelte-1lc4dl3_START --><link rel="stylesheet" href="/pico.min.css"><style>nav {
+		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-144528ca.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-7329a38c.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-72f961d2.js"><!-- HEAD_svelte-1lc4dl3_START --><link rel="stylesheet" href="/pico.min.css"><style>nav {
       margin-left: 10%;
       margin-right: 10%;
     }
@@ -36,25 +36,36 @@
   <main class="container">
 
 
-<article><h1>Tester</h1>
-  <p>Published: 2022-11-30</p>
-  <h1>Tjenareee</h1>
-<h1>you</h1>
-<hr>
-<h2>Whatup</h2>
-<p><strong>sick</strong> dude</p>
-<hr>
-<h2>My guy!</h2></article></main></main>
+<article><h1>Onsdag</h1>
+  <p>Published: 2023-01-25</p>
+  <p>Med hjälp av svelte examples så har jag lagt in musik i hemsidans start, så medans man spelar kan man lyssna på musik.</p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token keyword">import</span> AudioPlayer<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> stopAll <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./AudioPlayer.svelte'</span>
+
+<span class="token keyword">let</span> audioTracks <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token string">'https://sveltejs.github.io/assets/music/satie.mp3'</span>
+<span class="token punctuation">]</span></code><!-- HTML_TAG_END --></pre>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token punctuation">&#123;</span>#each audioTracks <span class="token keyword">as</span> src<span class="token punctuation">&#125;</span>
+  <span class="token operator">&lt;</span>AudioPlayer <span class="token punctuation">&#123;</span>src<span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token punctuation">&#123;</span><span class="token operator">/</span>each<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>Detta var koden jag använde för att kunna få in musiken. Med hjälp av den andra delen av koden,
+så får personen starta musiken själv när de kommer till startsidan. </p>
+<p>Just nu har jag det nedladdade ljudet som kom med, men kan välja ett nytt genom att söka på mp3 musik.
+Detta gjordes med hjälp av svelte.</p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"> <span class="token operator">&lt;</span>span<span class="token operator">></span>Workers<span class="token operator">:</span> <span class="token punctuation">&#123;</span>workers<span class="token punctuation">.</span>length<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<p>För att kunna veta hur många workers man har köpt under spelets gång så la jag till denna kod,
+som då la till bredvid variabeln worker efter så många som finns.
+Dessutom var det enjelt att lägga till, bredvid workers så lades det till ett kolon och sedan måsvingar,
+som man få tillsatte workers.length i och så räknades workers från det.</p></article></main></main>
 
 
-		<script type="module" data-sveltekit-hydrate="1jq7tep">
-			import { start } from "../_app/immutable/start-f839ee08.js";
+		<script type="module" data-sveltekit-hydrate="1ecxlqa">
+			import { start } from "../_app/immutable/start-fd207905.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1jq7tep"]').parentNode,
-				version: "1673948915503",
+				target: document.querySelector('[data-sveltekit-hydrate="1ecxlqa"]').parentNode,
+				version: "1674816750358",
 				hydrate: {
 					node_ids: [0, 4],
 					data: [null,null],

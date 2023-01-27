@@ -7,16 +7,16 @@
 		<meta http-equiv="content-security-policy" content="">
 		<link href="../_app/immutable/assets/_layout-8003c18b.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/2-c12348e4.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/start-f839ee08.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-efcbbb00.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-08392291.js">
+		<link rel="modulepreload" href="../_app/immutable/start-fd207905.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-1a61c524.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-339cea0c.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-f6925622.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-11e44e3b.js">
 		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-8546fc33.js">
-		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-53688c44.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/_page-2e95bc42.js"><!-- HEAD_svelte-1lc4dl3_START --><link rel="stylesheet" href="/pico.min.css"><style>nav {
+		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-144528ca.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-7329a38c.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-72f961d2.js"><!-- HEAD_svelte-1lc4dl3_START --><link rel="stylesheet" href="/pico.min.css"><style>nav {
       margin-left: 10%;
       margin-right: 10%;
     }
@@ -36,23 +36,28 @@
   <main class="container">
 
 
-<article><h1>Post three</h1>
-  <p>Published: 2022-11-30</p>
-  <h1>Tjena</h1>
-<h1>you</h1>
-<hr>
-<h2>Whatup</h2>
-<p><strong>sick</strong> dude</p></article></main></main>
+<article><h1>Tisdag</h1>
+  <p>Published: 2023-01-24</p>
+  <pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"><span class="token operator">&lt;</span>progress value<span class="token operator">=</span><span class="token punctuation">&#123;</span>clicks<span class="token punctuation">&#125;</span> max<span class="token operator">=</span><span class="token string">"10000"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>progress<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<p>Jag tog denna kodsnutt som kan då ge spelet något nytt ich då spelaren ett mål.
+Av detta ska någonting hända med spelet, kanske någon upgradering.</p>
+<pre class="language-ts"><!-- HTML_TAG_START --><code class="language-ts"> multiplier <span class="token operator">=</span> multiplier <span class="token operator">+</span> upgrade<span class="token punctuation">.</span>multiplier<span class="token punctuation">;</span>
+                clicks <span class="token operator">-=</span> upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">;</span>
+                upgrade<span class="token punctuation">.</span>cost <span class="token operator">*=</span> <span class="token number">2</span></code><!-- HTML_TAG_END --></pre>
+<p>Här så ändrade jag mer till spelet. Spelet var alldeles för enkelt och gick i stort sätt för stort.
+Det var på grund av doubler, så istället för att dubbla konstant så blir det istället +2.
+Samt så ändrades inte priset av doubler när man köpte så då la jag till att det blev dubbelt så dyrt efter varje gång.
+Samt att worker och doubler var för sig själva pris vis, så inte den ena höjer priset när man köper den andra.</p></article></main></main>
 
 
-		<script type="module" data-sveltekit-hydrate="adlzqg">
-			import { start } from "../_app/immutable/start-f839ee08.js";
+		<script type="module" data-sveltekit-hydrate="hatk0d">
+			import { start } from "../_app/immutable/start-fd207905.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="adlzqg"]').parentNode,
-				version: "1673948915503",
+				target: document.querySelector('[data-sveltekit-hydrate="hatk0d"]').parentNode,
+				version: "1674816750358",
 				hydrate: {
 					node_ids: [0, 4],
 					data: [null,null],
