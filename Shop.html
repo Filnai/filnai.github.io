@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout-8003c18b.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/_page-e72d0e36.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-b9add598.js">
+		<link href="./_app/immutable/assets/_page-a6f72a25.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-92eecc6a.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index-d00fa629.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-53336871.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index-722dcf36.js">
@@ -16,7 +16,7 @@
 		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-582e737d.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/Shop/_page.svelte-0c6536ab.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/Shop/_page.svelte-85914b15.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/stores-04decdc2.js"><!-- HEAD_svelte-1lc4dl3_START --><link rel="stylesheet" href="/pico.min.css"><style>nav {
       margin-left: 10%;
       margin-right: 10%;
@@ -34,43 +34,59 @@
 
 <main class="container-fluid"><hr>
 
-  <main class="container"><header class="svelte-1xr8ge">Here are your points you can shop with</header>
+  <main class="container">//Här är de totala poängen som har överförts från memory till shopen 
+    <header class="svelte-ob8l6g">Here are your points you can shop with</header>
     <input class="totalPoints" type="number" value="0">
 
-    <div class="flexbox svelte-1xr8ge"><div class="photoLink svelte-1xr8ge"><header class="svelte-1xr8ge">Here you can get to the game to collect points to shop</header>
-            <header class="svelte-1xr8ge">Click the picture to play</header>
-            <a href="http://localhost:5173/memory"><img src="image.png" alt="Memory" class="photoLink svelte-1xr8ge"></a></div>
+//första div (flexbox) som tar upp hela första ytan som sedan har flera div i sig 
+//första div i flexbox tar upp första delen av ytan och är linken till memory 
+    <div class="flexbox svelte-ob8l6g"><div class="photoLink svelte-ob8l6g"><header class="svelte-ob8l6g">Here you can get to the game to collect points to shop</header>
+            <header class="svelte-ob8l6g">Click the picture to play</header>
+            <a href="http://localhost:5173/memory"><img src="image.png" alt="Memory" class="photoLink svelte-ob8l6g"></a></div>
 
-        <div class="varor svelte-1xr8ge"><div class="photos svelte-1xr8ge"><img class="varaimg svelte-1xr8ge" src="slägga.png" alt="slägga">
-                <header class="information svelte-1xr8ge">Antons slägga:</header>
-                <header class="information svelte-1xr8ge">Flyg högt min broder</header>
-                <button class="buy svelte-1xr8ge" value="5000">BUY</button>
-                <header class="information svelte-1xr8ge">Pris: 5000p</header></div>
-            <div class="photos svelte-1xr8ge"><img class="varaimg svelte-1xr8ge" src="innebandyklubba.webp" alt="innebandyklubba">
-                <header class="information svelte-1xr8ge">Alice innebandyklubba:</header>
-                <header class="information svelte-1xr8ge">Sniper</header>
-                <button class="buy svelte-1xr8ge" value="5100">BUY</button>
-                <header class="information svelte-1xr8ge">Pris: 5100p</header></div></div></div>
+//andra div i flexbox gör så att objekten läggs bredvid varandra med hjälp av style detsamma (display: flex;)
+//dock vid plasering av div så la jag istället ihop de två varorna tillsammans i en div så plaseringen av objekten blev bättre
+//där vi har en div som innehåller det första man kan köpa 
+        <div class="varor svelte-ob8l6g"><div class="photos svelte-ob8l6g"><img class="varaimg svelte-ob8l6g" src="slägga.png" alt="slägga">
+                <header class="information svelte-ob8l6g">Antons slägga:</header>
+                <header class="information svelte-ob8l6g">Flyg högt min broder</header>
+            //gav knappen ett värde av priset av produkten, sedan en funktion direkt i kod snutten
+            //då varukorg listan lägger till varan när knappen klickas
+                <button class="buy svelte-ob8l6g" value="5000">BUY</button>
+                <header class="information svelte-ob8l6g">Pris: 5000p</header>
+                
+//inom samma div som varan innan, alltså classen varor så plaseringen blev rätt 
+            </div>
+            <div class="photos svelte-ob8l6g"><img class="varaimg svelte-ob8l6g" src="innebandyklubba.webp" alt="innebandyklubba">
+                <header class="information svelte-ob8l6g">Alice innebandyklubba:</header>
+                <header class="information svelte-ob8l6g">Sniper</header>
+            //gav knappen ett värde av priset av produkten, sedan en funktion direkt i kod snutten
+            //då varukorg listan lägger till varan när knappen klickas
+                <button class="buy svelte-ob8l6g" value="5100">BUY</button>
+                <header class="information svelte-ob8l6g">Pris: 5100p</header></div></div></div>
 
-    <div class="notice svelte-1xr8ge"><div><p>Notice...</p>
-            <header class="svelte-1xr8ge">There are soon arriving more things to the shop for you to buy, but don&#39;t be scared to buy things multiple times in both our mini shop and our regular shop. Have a nice day now! </header></div></div>
+//en ny div helt och hållet då de inte ska placeras bredvid varandra men under
+    <div class="notice svelte-ob8l6g"><div><p>Notice...</p>
+            <header class="svelte-ob8l6g">There are soon arriving more things to the shop for you to buy, but don&#39;t be scared to buy things multiple times in both our mini shop and our regular shop. Have a nice day now! </header></div></div>
 
+//då knappen till varorna trycks läggs summan pengar till och sedan sumeras till den sammanlagda kostnaden
     
-    <header class="checkOut svelte-1xr8ge">Amount to pay^</header>
+    <header class="checkOut svelte-ob8l6g">Amount to pay^</header>
+//modulen som är en popup kommer upp när knappen trycks med information i en annan fil
         
 
 
-<button class="svelte-1xr8ge">Checkout</button></main></main>
+<button class="svelte-ob8l6g">Checkout</button></main></main>
 
 
-		<script type="module" data-sveltekit-hydrate="qk71en">
-			import { start } from "./_app/immutable/start-b9add598.js";
+		<script type="module" data-sveltekit-hydrate="1fctk82">
+			import { start } from "./_app/immutable/start-92eecc6a.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="qk71en"]').parentNode,
-				version: "1685526611056",
+				target: document.querySelector('[data-sveltekit-hydrate="1fctk82"]').parentNode,
+				version: "1685530187812",
 				hydrate: {
 					node_ids: [0, 3],
 					data: [null,null],
