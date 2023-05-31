@@ -7,11 +7,13 @@
     import { story_id_store } from '$lib/stores.js';
     import { each, validate_each_argument } from 'svelte/internal';
 
+//poängen överförs från memory till shopen
     let totalPoints = 0;
     story_id_store.subscribe(value => {
 		totalPoints = value;
 	});
 
+//för popup vid checkout
     import { writable } from 'svelte/store';
 	import Modal from 'svelte-simple-modal';
     import { setContext } from 'svelte'
@@ -29,6 +31,8 @@
     modal.set(popup);
 }
 
+//vid checkout försvinner summan pengar man handlat för
+//får en alert när man inte har tillräckligt med pengar för köpet
 function pay() {
     if(totalPoints >= $sum) {
         totalPoints = totalPoints - $sum
@@ -40,10 +44,12 @@ function pay() {
 
 </script>
 
-
+//Här är de totala poängen som har överförts från memory till shopen 
     <header>Here are your points you can shop with</header>
     <input class="totalPoints" type=number bind:value={totalPoints}>
 
+//första div (flexbox) som tar upp hela första ytan som sedan har flera div i sig 
+//första div i flexbox tar upp första delen av ytan och är linken till memory 
     <div class="flexbox">
         <div class="photoLink">
             <header>Here you can get to the game to collect points to shop</header>
@@ -51,19 +57,27 @@ function pay() {
             <a href="http://localhost:5173/memory"><img  src="image.png" alt="Memory" class="photoLink"/></a>
         </div>
 
+//andra div i flexbox gör så att objekten läggs bredvid varandra med hjälp av style detsamma (display: flex;)
+//dock vid plasering av div så la jag istället ihop de två varorna tillsammans i en div så plaseringen av objekten blev bättre
+//där vi har en div som innehåller det första man kan köpa 
         <div class="varor">
             <div class="photos">
                 <img class="varaimg" src="slägga.png" alt="slägga"/>
                 <header class="information">Antons slägga:</header>
                 <header class="information">Flyg högt min broder</header>
+            //gav knappen ett värde av priset av produkten, sedan en funktion direkt i kod snutten
+            //då varukorg listan lägger till varan när knappen klickas
                 <button class="buy" value={slagga} on:click={()=>{varukorg = [slagga,...varukorg]}} >BUY</button>
                 <header class="information">Pris: 5000p</header>
                 
+//inom samma div som varan innan, alltså classen varor så plaseringen blev rätt 
             </div>
             <div class="photos">
                 <img class="varaimg" src="innebandyklubba.webp" alt="innebandyklubba"/>
                 <header class="information">Alice innebandyklubba:</header>
                 <header class="information">Sniper</header>
+            //gav knappen ett värde av priset av produkten, sedan en funktion direkt i kod snutten
+            //då varukorg listan lägger till varan när knappen klickas
                 <button class="buy" value={klubba} on:click={()=>{varukorg = [klubba,...varukorg]}}>BUY</button>
                 <header class="information">Pris: 5100p</header>
             </div>
@@ -71,6 +85,7 @@ function pay() {
         </div>
     </div>
 
+//en ny div helt och hållet då de inte ska placeras bredvid varandra men under
     <div class="notice">
         <div>
             <p>Notice...</p>
@@ -78,15 +93,18 @@ function pay() {
         </div>
     </div>
 
+//då knappen till varorna trycks läggs summan pengar till och sedan sumeras till den sammanlagda kostnaden
     {#each varukorg as vara}
     <header class="checkOut">{vara}</header>
     {/each}
     <header class="checkOut">Amount to pay^</header>
+//modulen som är en popup kommer upp när knappen trycks med information i en annan fil
         <Modal show={$modal}>
             <button on:click={showModal} on:click={pay} >Checkout</button>
           </Modal>
 
 <style>
+    
     .checkOut {
         border: 2px solid;
         background-color: rgb(98, 41, 41);

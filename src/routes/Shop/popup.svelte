@@ -1,10 +1,12 @@
 <script>
     import { getContext } from 'svelte'
 
+//då värdet går från andra filen av shopen 
 const variable = getContext('my-var')
 
 </script>
 
+//informationen på popupen 
 <h1>Checkout:</h1>
 <p>The amount is {$variable}</p>
 <p>Here is the amount you have to pay, thank you for playing and shopping on my webbshop!</p>

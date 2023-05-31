@@ -12,8 +12,11 @@
     let doublerCost = 1000;
     let cardsCost = 600;
 
+//totala poängen överförs till shopen
     story_id_store.subscribe(value => {
 		totalPoints = Number(value);
+
+//korten som är med i memory 
 	});
     for (let index = 0; index < 2; index++) {
       cards.push({
@@ -66,11 +69,14 @@
       });
     }
 
+//då vid minishopen man kan köpa att lägga till kort
     function addCards() {
       let index=cards.length;
+      //man kan bara lägga till ett visst antal kort, då max är 32 index
       if (totalPoints >= cardsCost && index<32) {
         totalPoints = totalPoints - cardsCost;
         story_id_store.set(totalPoints.toString())
+        //korten som läggs till, med samma img 
       cards.push({
         id: index, // TODO: unique ids per card card
         img: "https://picsum.photos/id/"+index.toString()+"/200/300",
@@ -83,10 +89,11 @@
         flipped: false,  // TODO: think
         completed: false,
       });
-
+      //korten ska alltid ändra plats
       shuffleCards(cards);
       cards = cards
     }
+    //om man inte har råd får man en alert
     else {
       alert("Sorry, you don't have enough money for this!")
     }
@@ -100,7 +107,9 @@
       totalPoints = points + points2;
     }
 
+  //i mini shopen kan man köpa en upgrade där allt dubblas
     function double() {
+      //så länge man har tillräckligt med pengar så funkar det
       if (totalPoints >= doublerCost) {
         doubler=doubler*2;
         points*=doubler;
@@ -108,11 +117,12 @@
         totalPoints = totalPoints - doublerCost;
         story_id_store.set(totalPoints.toString())
     }
+    //om man inte har råd får man en alert
     else {
       alert("Sorry, you don't have enough money for this!")
     }
   }
-
+//att korten inte alltid är på samma plats men shufflas
     function shuffleCards(cards) {
     for (var i = cards.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -121,6 +131,7 @@
         cards[j] = temp;
     }
 }
+//reset knappen då alla vända kort vänds tillbaka och score för vardera spelare startas om
     function reset() {
       cards.forEach ((card2) => {
         card2.completed = false;
@@ -130,6 +141,7 @@
       })
       
       cards = cards
+    //för att nollställa poängen igen, ta bort kommentaren här under och tryck reset sen kommentera ut den igen
       //story_id_store.set("0");
 
     }
@@ -196,6 +208,7 @@ shuffleCards(cards)
    
   </script>
 
+//detsamma som i shopen att lägga till div så man kan lägga objekten bredvid varandra 
 <div class="flexbox">
   <div class="info">
     <header>Total Points:</header>
