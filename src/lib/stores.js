@@ -11,7 +11,7 @@ import { writable } from "svelte/store";
 */
 
 /* initialize the story_id to '1' if the story_id has not already been stored */
-const story_id = browser ? window?.localStorage.getItem('story_id') ?? "1" : "1"
+const story_id = browser ? window?.localStorage.getItem('story_id') ?? "0" : "0"
 /* https://svelte.dev/tutorial/writable-stores */
 export const story_id_store = writable(story_id)
 
